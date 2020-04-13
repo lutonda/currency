@@ -1,8 +1,13 @@
+var  ExchangeService = require("../services/Exchange.service");
 exports.index = function(req, res) {
+
+    ExchangeService.send('test',()=>{})
     res.render('home/index')
   };
   
 exports.api =  function(req, res) {
+
+    
         res.render('home/api')
 }
   

@@ -1,4 +1,3 @@
-
 var nodemailer = require("nodemailer");
 var hbs = require('nodemailer-express-handlebars');
 

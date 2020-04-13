@@ -12,7 +12,7 @@ var express = require('express'),
     mongo=require('mongodb'),
     config=require('./config/database')
     mongoose = require('mongoose');
-var SocketSrv = require("./app/Socket.service");
+
 var User = require("./models/user");
 
     mongoose.connect(config.development);
@@ -122,14 +122,6 @@ io.on('connection',function(socket){
   console.log('>>>'+ (new Date()).toJSON().slice(0,10).replace(/-/g,'/')+ ': a user connected to: '+ socket.id + ' on ' + socket.request.connection.remoteAddress + ' - ' + socket.request.headers['user-agent']);
 
   //receber conncção
-  socket.on('send', function(data){
-      SocketSrv.send(data,function(data){
-        io.emit('refresh-connection-'+data.id,data)
-        console.log('>>>------------------------->RETURN: '+'refresh-connection-'+data.id)
-      });
-      
-    //console.log(data)
-  })
   io.emit('message','ola')
   //receber mensagem
   socket.on('chat message', function(msg){
