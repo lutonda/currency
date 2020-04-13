@@ -15,6 +15,12 @@ const SourceSchema = new mongoose.Schema({
   htmlSelector: {
     type: String
   },
+  endpoint: {
+    type: String
+  },
+  access_key: {
+    type: String
+  },
   descriptions: {
     type: String
   },

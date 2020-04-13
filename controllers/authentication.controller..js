@@ -1,5 +1,5 @@
 var User=require('../models/user')
-var Mailer=require('../services/Mail.servicervice')
+//var Mailer=require('../services/Mail.servicervice')
 exports.index = function(req, res, next) {
   res.render("authentication");
 };

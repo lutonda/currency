@@ -4,20 +4,23 @@ const uuidv5 = require("uuid/v5");
 
 const ExchangeSchema = new mongoose.Schema({
   inValue: {
-    type: Float32Array
+    type: String
   },
   outValue: {
-    type: Float32Array
+    type: String
   },
   source: {
     type:mongoose.Schema.Types.ObjectId,
-    ref:'User',
+    ref:'Source',
     required:true
   },
-  currecny: {
+  currency: {
     type:mongoose.Schema.Types.ObjectId,
     ref:'Currency',
     required:true
+  },
+  sourcedate:{
+    type:Date
   },
   isActive: {
     type: Boolean,
