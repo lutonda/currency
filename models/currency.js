@@ -2,31 +2,21 @@ var mongoose = require("mongoose");
 var bcrypt = require("bcryptjs");
 const uuidv5 = require("uuid/v5");
 
-const UserSchema = new mongoose.Schema({
+const CurrencySchema = new mongoose.Schema({
   name: {
     type: String
   },
-  username: {
-    type: String
-  },
-  email: {
+  code: {
     type: String,
     required: true,
     unique: true
   },
-  apikey: {
+  description: {
     type: String,
-    required: true,
-    unique: true
   },
-  password: {
+  source: {
     type: String,
-    required: true
   },
-  stations:[{
-    type: mongoose.Schema.Types.ObjectId,
-    ref:'Station'
-  }],
   isActive: {
     type: Boolean,
     default: false
@@ -34,39 +24,26 @@ const UserSchema = new mongoose.Schema({
   date: {
     type: Date,
     default: Date.now
-  },
-  avatar:{
-      type:String
   }
 });
 
-var User = (module.exports = mongoose.model("User", UserSchema));
+var Currency = (module.exports = mongoose.model("Currency", CurrencySchema));
 
-module.exports.getStations = (id)=> station.find({user:id}).populate('stations')
+module.exports.getStations = (id)=> station.find({Currency:id}).populate('stations')
 
-module.exports.getByUsername=function(email,callback){
-  User.findOne({email:email},callback).populate('stations')
+module.exports.getByCurrencyname=function(email,callback){
+  Currency.findOne({email:email},callback).populate('stations')
 }
 
 module.exports.getByApiKey=function(apiKey,callback){
-  User.findOne({apikey:apiKey},callback).populate('stations')
+  Currency.findOne({apikey:apiKey},callback).populate('stations')
 }
 
 module.exports.getById=function(id,callback){
-  User.findById(id,callback).populate('stations');
+  Currency.findById(id,callback).populate('stations');
 }
 
-module.exports.create = function(newUser, callback) {
-  
-  if(!newUser.name) newUser.name=newUser.email.split('@')[0];
-
-  newUser.apikey = bcrypt.hashSync(uuidv5('http://sms.go/key', uuidv5.URL), bcrypt.genSaltSync(10));
-
-  bcrypt.genSalt(10, function(err, salt) {
-    bcrypt.hash(newUser.password, salt, function(err, hash) {
-      newUser.password = hash;
-      newUser.save(callback);
-    });
-  });
+module.exports.create = function(newCurrency, callback) {
+  newCurrency.save(callback);
 };
-module.exports.comparePassword=bcrypt.compare
+

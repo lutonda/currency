@@ -2,19 +2,21 @@ var mongoose = require("mongoose");
 var bcrypt = require("bcryptjs");
 const uuidv5 = require("uuid/v5");
 
-const ExchangeSchema = new mongoose.Schema({
-  value: {
-    type: Float32Array
+const SourceSchema = new mongoose.Schema({
+  code: {
+    type: String
   },
-  source: {
-    type:mongoose.Schema.Types.ObjectId,
-    ref:'User',
-    required:true
+  name: {
+    type: String
   },
-  currecny: {
-    type:mongoose.Schema.Types.ObjectId,
-    ref:'Currency',
-    required:true
+  url: {
+    type: String
+  },
+  htmlSelector: {
+    type: String
+  },
+  descriptions: {
+    type: String
   },
   isActive: {
     type: Boolean,
@@ -26,22 +28,22 @@ const ExchangeSchema = new mongoose.Schema({
   }
 });
 
-var Exchange = (module.exports = mongoose.model("Exchange", ExchangeSchema));
+var Source = (module.exports = mongoose.model("Source", SourceSchema));
 
-module.exports.getStations = (id)=> station.find({Exchange:id}).populate('stations')
+module.exports.getStations = (id)=> station.find({Source:id}).populate('stations')
 
-module.exports.getByExchangename=function(email,callback){
-  Exchange.findOne({email:email},callback).populate('stations')
+module.exports.getBySourcename=function(email,callback){
+  Source.findOne({email:email},callback).populate('stations')
 }
 
 module.exports.getByApiKey=function(apiKey,callback){
-  Exchange.findOne({apikey:apiKey},callback).populate('stations')
+  Source.findOne({apikey:apiKey},callback).populate('stations')
 }
 
 module.exports.getById=function(id,callback){
-  Exchange.findById(id,callback).populate('stations');
+  Source.findById(id,callback).populate('stations');
 }
 
-module.exports.create = function(newExchange, callback) {
-      newExchange.save(callback);
+module.exports.create = function(newSource, callback) {
+      newSource.save(callback);
 };
