@@ -19,16 +19,14 @@ const ExchangeSchema = new mongoose.Schema({
     ref:'Currency',
     required:true
   },
-  sourcedate:{
-    type:Date
+  version:{
+    type:mongoose.Schema.Types.ObjectId,
+    ref:'SyncVersion',
+    required:true
   },
   isActive: {
     type: Boolean,
     default: false
-  },
-  date: {
-    type: Date,
-    default: Date.now
   }
 });
 

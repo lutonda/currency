@@ -1,7 +1,8 @@
 var  ExchangeService = require("../services/Exchange.service");
 exports.index = function(req, res) {
 
-    ExchangeService.send('test',()=>{})
+    //ExchangeService.interncional('test',()=>{})
+    ExchangeService.local('test',()=>{})
     res.render('home/index')
   };
   
