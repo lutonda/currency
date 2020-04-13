@@ -3,7 +3,10 @@ var bcrypt = require("bcryptjs");
 const uuidv5 = require("uuid/v5");
 
 const ExchangeSchema = new mongoose.Schema({
-  value: {
+  inValue: {
+    type: Float32Array
+  },
+  outValue: {
     type: Float32Array
   },
   source: {

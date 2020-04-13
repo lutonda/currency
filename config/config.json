@@ -1,0 +1,1312 @@
+{
+    
+    
+    "currencys":
+[
+    {
+        "description": "Afghanistan",
+        "name": "Afghan afghani",
+        "code": "AFN"
+    },
+    {
+        "description": "Akrotiri and Dhekelia (UK)",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Aland Islands (Finland)",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Albania",
+        "name": "Albanian lek",
+        "code": "ALL"
+    },
+    {
+        "description": "Algeria",
+        "name": "Algerian dinar",
+        "code": "DZD"
+    },
+    {
+        "description": "American Samoa (USA)",
+        "name": "United States dollar",
+        "code": "USD"
+    },
+    {
+        "description": "Andorra",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Angola",
+        "name": "Angolan kwanza",
+        "code": "AOA"
+    },
+    {
+        "description": "Anguilla (UK)",
+        "name": "East Caribbean dollar",
+        "code": "XCD"
+    },
+    {
+        "description": "Antigua and Barbuda",
+        "name": "East Caribbean dollar",
+        "code": "XCD"
+    },
+    {
+        "description": "Argentina",
+        "name": "Argentine peso",
+        "code": "ARS"
+    },
+    {
+        "description": "Armenia",
+        "name": "Armenian dram",
+        "code": "AMD"
+    },
+    {
+        "description": "Aruba (Netherlands)",
+        "name": "Aruban florin",
+        "code": "AWG"
+    },
+    {
+        "description": "Ascension Island (UK)",
+        "name": "Saint Helena pound",
+        "code": "SHP"
+    },
+    {
+        "description": "Australia",
+        "name": "Australian dollar",
+        "code": "AUD"
+    },
+    {
+        "description": "Austria",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Azerbaijan",
+        "name": "Azerbaijan manat",
+        "code": "AZN"
+    },
+    {
+        "description": "Bahamas",
+        "name": "Bahamian dollar",
+        "code": "BSD"
+    },
+    {
+        "description": "Bahrain",
+        "name": "Bahraini dinar",
+        "code": "BHD"
+    },
+    {
+        "description": "Bangladesh",
+        "name": "Bangladeshi taka",
+        "code": "BDT"
+    },
+    {
+        "description": "Barbados",
+        "name": "Barbadian dollar",
+        "code": "BBD"
+    },
+    {
+        "description": "Belarus",
+        "name": "Belarusian ruble",
+        "code": "BYN"
+    },
+    {
+        "description": "Belgium",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Belize",
+        "name": "Belize dollar",
+        "code": "BZD"
+    },
+    {
+        "description": "Benin",
+        "name": "West African CFA franc",
+        "code": "XOF"
+    },
+    {
+        "description": "Bermuda (UK)",
+        "name": "Bermudian dollar",
+        "code": "BMD"
+    },
+    {
+        "description": "Bhutan",
+        "name": "Bhutanese ngultrum",
+        "code": "BTN"
+    },
+    {
+        "description": "Bolivia",
+        "name": "Bolivian boliviano",
+        "code": "BOB"
+    },
+    {
+        "description": "Bonaire (Netherlands)",
+        "name": "United States dollar",
+        "code": "USD"
+    },
+    {
+        "description": "Bosnia and Herzegovina",
+        "name": "Bosnia and Herzegovina convertible mark",
+        "code": "BAM"
+    },
+    {
+        "description": "Botswana",
+        "name": "Botswana pula",
+        "code": "BWP"
+    },
+    {
+        "description": "Brazil",
+        "name": "Brazilian real",
+        "code": "BRL"
+    },
+    {
+        "description": "British Indian Ocean Territory (UK)",
+        "name": "United States dollar",
+        "code": "USD"
+    },
+    {
+        "description": "British Virgin Islands (UK)",
+        "name": "United States dollar",
+        "code": "USD"
+    },
+    {
+        "description": "Brunei",
+        "name": "Brunei dollar",
+        "code": "BND"
+    },
+    {
+        "description": "Bulgaria",
+        "name": "Bulgarian lev",
+        "code": "BGN"
+    },
+    {
+        "description": "Burkina Faso",
+        "name": "West African CFA franc",
+        "code": "XOF"
+    },
+    {
+        "description": "Burundi",
+        "name": "Burundi franc",
+        "code": "BIF"
+    },
+    {
+        "description": "Cabo Verde",
+        "name": "Cape Verdean escudo",
+        "code": "CVE"
+    },
+    {
+        "description": "Cambodia",
+        "name": "Cambodian riel",
+        "code": "KHR"
+    },
+    {
+        "description": "Cameroon",
+        "name": "Central African CFA franc",
+        "code": "XAF"
+    },
+    {
+        "description": "Canada",
+        "name": "Canadian dollar",
+        "code": "CAD"
+    },
+    {
+        "description": "Caribbean Netherlands (Netherlands)",
+        "name": "United States dollar",
+        "code": "USD"
+    },
+    {
+        "description": "Cayman Islands (UK)",
+        "name": "Cayman Islands dollar",
+        "code": "KYD"
+    },
+    {
+        "description": "Central African Republic",
+        "name": "Central African CFA franc",
+        "code": "XAF"
+    },
+    {
+        "description": "Chad",
+        "name": "Central African CFA franc",
+        "code": "XAF"
+    },
+    {
+        "description": "Chatham Islands (New Zealand)",
+        "name": "New Zealand dollar",
+        "code": "NZD"
+    },
+    {
+        "description": "Chile",
+        "name": "Chilean peso",
+        "code": "CLP"
+    },
+    {
+        "description": "China",
+        "name": "Chinese Yuan Renminbi",
+        "code": "CNY"
+    },
+    {
+        "description": "Christmas Island (Australia)",
+        "name": "Australian dollar",
+        "code": "AUD"
+    },
+    {
+        "description": "Cocos (Keeling) Islands (Australia)",
+        "name": "Australian dollar",
+        "code": "AUD"
+    },
+    {
+        "description": "Colombia",
+        "name": "Colombian peso",
+        "code": "COP"
+    },
+    {
+        "description": "Comoros",
+        "name": "Comorian franc",
+        "code": "KMF"
+    },
+    {
+        "description": "Congo",
+        "name": " Democratic Republic of the",
+        "code": "Congolese franc"
+    },
+    {
+        "description": "Congo",
+        "name": " Republic of the",
+        "code": "Central African CFA franc"
+    },
+    {
+        "description": "Cook Islands (New Zealand)",
+        "name": "Cook Islands dollar",
+        "code": "none"
+    },
+    {
+        "description": "Costa Rica",
+        "name": "Costa Rican colon",
+        "code": "CRC"
+    },
+    {
+        "description": "Cote d'Ivoire",
+        "name": "West African CFA franc",
+        "code": "XOF"
+    },
+    {
+        "description": "Croatia",
+        "name": "Croatian kuna",
+        "code": "HRK"
+    },
+    {
+        "description": "Cuba",
+        "name": "Cuban peso",
+        "code": "CUP"
+    },
+    {
+        "description": "Curacao (Netherlands)",
+        "name": "Netherlands Antillean guilder",
+        "code": "ANG"
+    },
+    {
+        "description": "Cyprus",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Czechia",
+        "name": "Czech koruna",
+        "code": "CZK"
+    },
+    {
+        "description": "Denmark",
+        "name": "Danish krone",
+        "code": "DKK"
+    },
+    {
+        "description": "Djibouti",
+        "name": "Djiboutian franc",
+        "code": "DJF"
+    },
+    {
+        "description": "Dominica",
+        "name": "East Caribbean dollar",
+        "code": "XCD"
+    },
+    {
+        "description": "Dominican Republic",
+        "name": "Dominican peso",
+        "code": "DOP"
+    },
+    {
+        "description": "Ecuador",
+        "name": "United States dollar",
+        "code": "USD"
+    },
+    {
+        "description": "Egypt",
+        "name": "Egyptian pound",
+        "code": "EGP"
+    },
+    {
+        "description": "El Salvador",
+        "name": "United States dollar",
+        "code": "USD"
+    },
+    {
+        "description": "Equatorial Guinea",
+        "name": "Central African CFA franc",
+        "code": "XAF"
+    },
+    {
+        "description": "Eritrea",
+        "name": "Eritrean nakfa",
+        "code": "ERN"
+    },
+    {
+        "description": "Estonia",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Eswatini (formerly Swaziland)",
+        "name": "Swazi lilangeni",
+        "code": "SZL"
+    },
+    {
+        "description": "Ethiopia",
+        "name": "Ethiopian birr",
+        "code": "ETB"
+    },
+    {
+        "description": "Falkland Islands (UK)",
+        "name": "Falkland Islands pound",
+        "code": "FKP"
+    },
+    {
+        "description": "Faroe Islands (Denmark)",
+        "name": "Faroese krona",
+        "code": "none"
+    },
+    {
+        "description": "Fiji",
+        "name": "Fijian dollar",
+        "code": "FJD"
+    },
+    {
+        "description": "Finland",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "France",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "French Guiana (France)",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "French Polynesia (France)",
+        "name": "CFP franc",
+        "code": "XPF"
+    },
+    {
+        "description": "Gabon",
+        "name": "Central African CFA franc",
+        "code": "XAF"
+    },
+    {
+        "description": "Gambia",
+        "name": "Gambian dalasi",
+        "code": "GMD"
+    },
+    {
+        "description": "Georgia",
+        "name": "Georgian lari",
+        "code": "GEL"
+    },
+    {
+        "description": "Germany",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Ghana",
+        "name": "Ghanaian cedi",
+        "code": "GHS"
+    },
+    {
+        "description": "Gibraltar (UK)",
+        "name": "Gibraltar pound",
+        "code": "GIP"
+    },
+    {
+        "description": "Greece",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Greenland (Denmark)",
+        "name": "Danish krone",
+        "code": "DKK"
+    },
+    {
+        "description": "Grenada",
+        "name": "East Caribbean dollar",
+        "code": "XCD"
+    },
+    {
+        "description": "Guadeloupe (France)",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Guam (USA)",
+        "name": "United States dollar",
+        "code": "USD"
+    },
+    {
+        "description": "Guatemala",
+        "name": "Guatemalan quetzal",
+        "code": "GTQ"
+    },
+    {
+        "description": "Guernsey (UK)",
+        "name": "Guernsey Pound",
+        "code": "GGP"
+    },
+    {
+        "description": "Guinea",
+        "name": "Guinean franc",
+        "code": "GNF"
+    },
+    {
+        "description": "Guinea-Bissau",
+        "name": "West African CFA franc",
+        "code": "XOF"
+    },
+    {
+        "description": "Guyana",
+        "name": "Guyanese dollar",
+        "code": "GYD"
+    },
+    {
+        "description": "Haiti",
+        "name": "Haitian gourde",
+        "code": "HTG"
+    },
+    {
+        "description": "Honduras",
+        "name": "Honduran lempira",
+        "code": "HNL"
+    },
+    {
+        "description": "Hong Kong (China)",
+        "name": "Hong Kong dollar",
+        "code": "HKD"
+    },
+    {
+        "description": "Hungary",
+        "name": "Hungarian forint",
+        "code": "HUF"
+    },
+    {
+        "description": "Iceland",
+        "name": "Icelandic krona",
+        "code": "ISK"
+    },
+    {
+        "description": "India",
+        "name": "Indian rupee",
+        "code": "INR"
+    },
+    {
+        "description": "Indonesia",
+        "name": "Indonesian rupiah",
+        "code": "IDR"
+    },
+    {
+        "description": "International Monetary Fund (IMF)",
+        "name": "SDR (Special Drawing Right)",
+        "code": "XDR"
+    },
+    {
+        "description": "Iran",
+        "name": "Iranian rial",
+        "code": "IRR"
+    },
+    {
+        "description": "Iraq",
+        "name": "Iraqi dinar",
+        "code": "IQD"
+    },
+    {
+        "description": "Ireland",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Isle of Man (UK)",
+        "name": "Manx pound",
+        "code": "IMP"
+    },
+    {
+        "description": "Israel",
+        "name": "Israeli new shekel",
+        "code": "ILS"
+    },
+    {
+        "description": "Italy",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Jamaica",
+        "name": "Jamaican dollar",
+        "code": "JMD"
+    },
+    {
+        "description": "Japan",
+        "name": "Japanese yen",
+        "code": "JPY"
+    },
+    {
+        "description": "Jersey (UK)",
+        "name": "Jersey pound",
+        "code": "JEP"
+    },
+    {
+        "description": "Jordan",
+        "name": "Jordanian dinar",
+        "code": "JOD"
+    },
+    {
+        "description": "Kazakhstan",
+        "name": "Kazakhstani tenge",
+        "code": "KZT"
+    },
+    {
+        "description": "Kenya",
+        "name": "Kenyan shilling",
+        "code": "KES"
+    },
+    {
+        "description": "Kiribati",
+        "name": "Australian dollar",
+        "code": "AUD"
+    },
+    {
+        "description": "Kosovo",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Kuwait",
+        "name": "Kuwaiti dinar",
+        "code": "KWD"
+    },
+    {
+        "description": "Kyrgyzstan",
+        "name": "Kyrgyzstani som",
+        "code": "KGS"
+    },
+    {
+        "description": "Laos",
+        "name": "Lao kip",
+        "code": "LAK"
+    },
+    {
+        "description": "Latvia",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Lebanon",
+        "name": "Lebanese pound",
+        "code": "LBP"
+    },
+    {
+        "description": "Lesotho",
+        "name": "Lesotho loti",
+        "code": "LSL"
+    },
+    {
+        "description": "Liberia",
+        "name": "Liberian dollar",
+        "code": "LRD"
+    },
+    {
+        "description": "Libya",
+        "name": "Libyan dinar",
+        "code": "LYD"
+    },
+    {
+        "description": "Liechtenstein",
+        "name": "Swiss franc",
+        "code": "CHF"
+    },
+    {
+        "description": "Lithuania",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Luxembourg",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Macau (China)",
+        "name": "Macanese pataca",
+        "code": "MOP"
+    },
+    {
+        "description": "Madagascar",
+        "name": "Malagasy ariary",
+        "code": "MGA"
+    },
+    {
+        "description": "Malawi",
+        "name": "Malawian kwacha",
+        "code": "MWK"
+    },
+    {
+        "description": "Malaysia",
+        "name": "Malaysian ringgit",
+        "code": "MYR"
+    },
+    {
+        "description": "Maldives",
+        "name": "Maldivian rufiyaa",
+        "code": "MVR"
+    },
+    {
+        "description": "Mali",
+        "name": "West African CFA franc",
+        "code": "XOF"
+    },
+    {
+        "description": "Malta",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Marshall Islands",
+        "name": "United States dollar",
+        "code": "USD"
+    },
+    {
+        "description": "Martinique (France)",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Mauritania",
+        "name": "Mauritanian ouguiya",
+        "code": "MRU"
+    },
+    {
+        "description": "Mauritius",
+        "name": "Mauritian rupee",
+        "code": "MUR"
+    },
+    {
+        "description": "Mayotte (France)",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Mexico",
+        "name": "Mexican peso",
+        "code": "MXN"
+    },
+    {
+        "description": "Micronesia",
+        "name": "United States dollar",
+        "code": "USD"
+    },
+    {
+        "description": "Moldova",
+        "name": "Moldovan leu",
+        "code": "MDL"
+    },
+    {
+        "description": "Monaco",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Mongolia",
+        "name": "Mongolian tugrik",
+        "code": "MNT"
+    },
+    {
+        "description": "Montenegro",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Montserrat (UK)",
+        "name": "East Caribbean dollar",
+        "code": "XCD"
+    },
+    {
+        "description": "Morocco",
+        "name": "Moroccan dirham",
+        "code": "MAD"
+    },
+    {
+        "description": "Mozambique",
+        "name": "Mozambican metical",
+        "code": "MZN"
+    },
+    {
+        "description": "Myanmar (formerly Burma)",
+        "name": "Myanmar kyat",
+        "code": "MMK"
+    },
+    {
+        "description": "Namibia",
+        "name": "Namibian dollar",
+        "code": "NAD"
+    },
+    {
+        "description": "Nauru",
+        "name": "Australian dollar",
+        "code": "AUD"
+    },
+    {
+        "description": "Nepal",
+        "name": "Nepalese rupee",
+        "code": "NPR"
+    },
+    {
+        "description": "Netherlands",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "New Caledonia (France)",
+        "name": "CFP franc",
+        "code": "XPF"
+    },
+    {
+        "description": "New Zealand",
+        "name": "New Zealand dollar",
+        "code": "NZD"
+    },
+    {
+        "description": "Nicaragua",
+        "name": "Nicaraguan cordoba",
+        "code": "NIO"
+    },
+    {
+        "description": "Niger",
+        "name": "West African CFA franc",
+        "code": "XOF"
+    },
+    {
+        "description": "Nigeria",
+        "name": "Nigerian naira",
+        "code": "NGN"
+    },
+    {
+        "description": "Niue (New Zealand)",
+        "name": "New Zealand dollar",
+        "code": "NZD"
+    },
+    {
+        "description": "Norfolk Island (Australia)",
+        "name": "Australian dollar",
+        "code": "AUD"
+    },
+    {
+        "description": "Northern Mariana Islands (USA)",
+        "name": "United States dollar",
+        "code": "USD"
+    },
+    {
+        "description": "North Korea",
+        "name": "North Korean won",
+        "code": "KPW"
+    },
+    {
+        "description": "North Macedonia (formerly Macedonia)",
+        "name": "Macedonian denar",
+        "code": "MKD"
+    },
+    {
+        "description": "Norway",
+        "name": "Norwegian krone",
+        "code": "NOK"
+    },
+    {
+        "description": "Oman",
+        "name": "Omani rial",
+        "code": "OMR"
+    },
+    {
+        "description": "Pakistan",
+        "name": "Pakistani rupee",
+        "code": "PKR"
+    },
+    {
+        "description": "Palau",
+        "name": "United States dollar",
+        "code": "USD"
+    },
+    {
+        "description": "Palestine",
+        "name": "Israeli new shekel",
+        "code": "ILS"
+    },
+    {
+        "description": "Panama",
+        "name": "United States dollar",
+        "code": "USD"
+    },
+    {
+        "description": "Papua New Guinea",
+        "name": "Papua New Guinean kina",
+        "code": "PGK"
+    },
+    {
+        "description": "Paraguay",
+        "name": "Paraguayan guarani",
+        "code": "PYG"
+    },
+    {
+        "description": "Peru",
+        "name": "Peruvian sol",
+        "code": "PEN"
+    },
+    {
+        "description": "Philippines",
+        "name": "Philippine peso",
+        "code": "PHP"
+    },
+    {
+        "description": "Pitcairn Islands (UK)",
+        "name": "New Zealand dollar",
+        "code": "NZD"
+    },
+    {
+        "description": "Poland",
+        "name": "Polish zloty",
+        "code": "PLN"
+    },
+    {
+        "description": "Portugal",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Puerto Rico (USA)",
+        "name": "United States dollar",
+        "code": "USD"
+    },
+    {
+        "description": "Qatar",
+        "name": "Qatari riyal",
+        "code": "QAR"
+    },
+    {
+        "description": "Reunion (France)",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Romania",
+        "name": "Romanian leu",
+        "code": "RON"
+    },
+    {
+        "description": "Russia",
+        "name": "Russian ruble",
+        "code": "RUB"
+    },
+    {
+        "description": "Rwanda",
+        "name": "Rwandan franc",
+        "code": "RWF"
+    },
+    {
+        "description": "Saba (Netherlands)",
+        "name": "United States dollar",
+        "code": "USD"
+    },
+    {
+        "description": "Saint Barthelemy (France)",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Saint Helena (UK)",
+        "name": "Saint Helena pound",
+        "code": "SHP"
+    },
+    {
+        "description": "Saint Kitts and Nevis",
+        "name": "East Caribbean dollar",
+        "code": "XCD"
+    },
+    {
+        "description": "Saint Lucia",
+        "name": "East Caribbean dollar",
+        "code": "XCD"
+    },
+    {
+        "description": "Saint Martin (France)",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Saint Pierre and Miquelon (France)",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Saint Vincent and the Grenadines",
+        "name": "East Caribbean dollar",
+        "code": "XCD"
+    },
+    {
+        "description": "Samoa",
+        "name": "Samoan tala",
+        "code": "WST"
+    },
+    {
+        "description": "San Marino",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Sao Tome and Principe",
+        "name": "Sao Tome and Principe dobra",
+        "code": "STN"
+    },
+    {
+        "description": "Saudi Arabia",
+        "name": "Saudi Arabian riyal",
+        "code": "SAR"
+    },
+    {
+        "description": "Senegal",
+        "name": "West African CFA franc",
+        "code": "XOF"
+    },
+    {
+        "description": "Serbia",
+        "name": "Serbian dinar",
+        "code": "RSD"
+    },
+    {
+        "description": "Seychelles",
+        "name": "Seychellois rupee",
+        "code": "SCR"
+    },
+    {
+        "description": "Sierra Leone",
+        "name": "Sierra Leonean leone",
+        "code": "SLL"
+    },
+    {
+        "description": "Singapore",
+        "name": "Singapore dollar",
+        "code": "SGD"
+    },
+    {
+        "description": "Sint Eustatius (Netherlands)",
+        "name": "United States dollar",
+        "code": "USD"
+    },
+    {
+        "description": "Sint Maarten (Netherlands)",
+        "name": "Netherlands Antillean guilder",
+        "code": "ANG"
+    },
+    {
+        "description": "Slovakia",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Slovenia",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Solomon Islands",
+        "name": "Solomon Islands dollar",
+        "code": "SBD"
+    },
+    {
+        "description": "Somalia",
+        "name": "Somali shilling",
+        "code": "SOS"
+    },
+    {
+        "description": "South Africa",
+        "name": "South African rand",
+        "code": "ZAR"
+    },
+    {
+        "description": "South Georgia Island (UK)",
+        "name": "Pound sterling",
+        "code": "GBP"
+    },
+    {
+        "description": "South Korea",
+        "name": "South Korean won",
+        "code": "KRW"
+    },
+    {
+        "description": "South Sudan",
+        "name": "South Sudanese pound",
+        "code": "SSP"
+    },
+    {
+        "description": "Spain",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Sri Lanka",
+        "name": "Sri Lankan rupee",
+        "code": "LKR"
+    },
+    {
+        "description": "Sudan",
+        "name": "Sudanese pound",
+        "code": "SDG"
+    },
+    {
+        "description": "Suriname",
+        "name": "Surinamese dollar",
+        "code": "SRD"
+    },
+    {
+        "description": "Svalbard and Jan Mayen (Norway)",
+        "name": "Norwegian krone",
+        "code": "NOK"
+    },
+    {
+        "description": "Sweden",
+        "name": "Swedish krona",
+        "code": "SEK"
+    },
+    {
+        "description": "Switzerland",
+        "name": "Swiss franc",
+        "code": "CHF"
+    },
+    {
+        "description": "Syria",
+        "name": "Syrian pound",
+        "code": "SYP"
+    },
+    {
+        "description": "Taiwan",
+        "name": "New Taiwan dollar",
+        "code": "TWD"
+    },
+    {
+        "description": "Tajikistan",
+        "name": "Tajikistani somoni",
+        "code": "TJS"
+    },
+    {
+        "description": "Tanzania",
+        "name": "Tanzanian shilling",
+        "code": "TZS"
+    },
+    {
+        "description": "Thailand",
+        "name": "Thai baht",
+        "code": "THB"
+    },
+    {
+        "description": "Timor-Leste",
+        "name": "United States dollar",
+        "code": "USD"
+    },
+    {
+        "description": "Togo",
+        "name": "West African CFA franc",
+        "code": "XOF"
+    },
+    {
+        "description": "Tokelau (New Zealand)",
+        "name": "New Zealand dollar",
+        "code": "NZD"
+    },
+    {
+        "description": "Tonga",
+        "name": "Tongan pa’anga",
+        "code": "TOP"
+    },
+    {
+        "description": "Trinidad and Tobago",
+        "name": "Trinidad and Tobago dollar",
+        "code": "TTD"
+    },
+    {
+        "description": "Tristan da Cunha (UK)",
+        "name": "Pound sterling",
+        "code": "GBP"
+    },
+    {
+        "description": "Tunisia",
+        "name": "Tunisian dinar",
+        "code": "TND"
+    },
+    {
+        "description": "Turkey",
+        "name": "Turkish lira",
+        "code": "TRY"
+    },
+    {
+        "description": "Turkmenistan",
+        "name": "Turkmen manat",
+        "code": "TMT"
+    },
+    {
+        "description": "Turks and Caicos Islands (UK)",
+        "name": "United States dollar",
+        "code": "USD"
+    },
+    {
+        "description": "Tuvalu",
+        "name": "Australian dollar",
+        "code": "AUD"
+    },
+    {
+        "description": "Uganda",
+        "name": "Ugandan shilling",
+        "code": "UGX"
+    },
+    {
+        "description": "Ukraine",
+        "name": "Ukrainian hryvnia",
+        "code": "UAH"
+    },
+    {
+        "description": "United Arab Emirates",
+        "name": "UAE dirham",
+        "code": "AED"
+    },
+    {
+        "description": "United Kingdom",
+        "name": "Pound sterling",
+        "code": "GBP"
+    },
+    {
+        "description": "United States of America",
+        "name": "United States dollar",
+        "code": "USD"
+    },
+    {
+        "description": "Uruguay",
+        "name": "Uruguayan peso",
+        "code": "UYU"
+    },
+    {
+        "description": "US Virgin Islands (USA)",
+        "name": "United States dollar",
+        "code": "USD"
+    },
+    {
+        "description": "Uzbekistan",
+        "name": "Uzbekistani som",
+        "code": "UZS"
+    },
+    {
+        "description": "Vanuatu",
+        "name": "Vanuatu vatu",
+        "code": "VUV"
+    },
+    {
+        "description": "Vatican City (Holy See)",
+        "name": "European euro",
+        "code": "EUR"
+    },
+    {
+        "description": "Venezuela",
+        "name": "Venezuelan bolivar",
+        "code": "VES"
+    },
+    {
+        "description": "Vietnam",
+        "name": "Vietnamese dong",
+        "code": "VND"
+    },
+    {
+        "description": "Wake Island (USA)",
+        "name": "United States dollar",
+        "code": "USD"
+    },
+    {
+        "description": "Wallis and Futuna (France)",
+        "name": "CFP franc",
+        "code": "XPF"
+    },
+    {
+        "description": "Yemen",
+        "name": "Yemeni rial",
+        "code": "YER"
+    },
+    {
+        "description": "Zambia",
+        "name": "Zambian kwacha",
+        "code": "ZMW"
+    },
+    {
+        "description": "Zimbabwe",
+        "name": "United States dollar",
+        "code": "USD"
+    }
+],
+"sources":[
+    {
+        "code":"Fixer",
+        "name":"Internacional",
+        "url":"http://data.fixer.io/api/",
+        "htmlSelector":"",
+        "endpoint":"latest",
+        "access_key":"73aec86fd31ba205e1a5f924e542fd43"
+    },
+    {
+        "code":"AGT",
+        "name":"Adiministração geral tributária",
+        "url":"https://agt.minfin.gov.ao/PortalAGT/#!/",
+        "htmlSelector":"table.table.table-condensed.table-blocked"
+    },
+    {
+        "code":"BFA",
+        "name":"Banco de Fomento Angola",
+        "url":"https://www.bfa.ao/pt/particulares/pesquisa-de-cambios/",
+        "htmlSelector":"div.row div.col-md-12 table.table.table-style-1.js-exchangeTable"
+    },
+    {
+        "code":"BAI",
+        "name":"Banco Angolano de Investimento",
+        "url":"https://www.bfa.ao/pt/particulares/pesquisa-de-cambios/",
+        "htmlSelector":""
+    },
+    {
+        "code":"Atlântico",
+        "name":"Banco Atlântico de Angola",
+        "url":"https://www.bfa.ao/pt/particulares/pesquisa-de-cambios/",
+        "htmlSelector":""
+    },
+    {
+        "code":"Economico",
+        "name":"Banco Economico de Angola",
+        "url":"https://www.bfa.ao/pt/particulares/pesquisa-de-cambios/",
+        "htmlSelector":""
+    }
+]
+}
