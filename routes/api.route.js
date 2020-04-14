@@ -4,10 +4,15 @@
 var router = require('express').Router();
 var controller = require('../controllers/api.controller')
 // Set default API response
-router.post('/v2/staion/autehenticate', controller.stationAutehenticateByEmail);
+/*router.post('/v2/staion/autehenticate', controller.stationAutehenticateByEmail);
 router.post('/v2/staion/autehenticate/api', controller.stationAutehenticateByApiKey);
 
 router.get('/v2/sendsms', controller.stationSendsms);
+*/
+router.get('/v2/:source', controller.getOneBy);
+router.get('/v2/:source/all', controller.getAllBy);
+/*router.get('/v2/sendsms', controller.stationSendsms);
+router.get('/v2/sendsms', controller.stationSendsms);*/
 
 // Export API routes
 module.exports = router;

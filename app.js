@@ -13,6 +13,11 @@ var express = require('express'),
     config=require('./config/database')
     mongoose = require('mongoose');
 
+    var express = require('express');
+var jwt = require('jwt-simple');
+var app = express();
+
+app.set('jwtTokenSecret', 'YOUR_SECRET_STRING');
 var User = require("./models/user");
 
     mongoose.connect(config.development);
