@@ -26,6 +26,14 @@ const SyncVersionSchema = new mongoose.Schema({
             return v
         }*/
     },
+    exchanges:[{
+      type:mongoose.Schema.Types.ObjectId,
+      ref:"Exchange",
+
+    // The below option tells this plugin to always call `populate()` on
+    // `populatedField`
+      autopopulate: true
+    }],
     sourceDate: {
         type: Date
     },
@@ -43,6 +51,7 @@ const SyncVersionSchema = new mongoose.Schema({
 });
 
 var SyncVersion = (module.exports = mongoose.model("SyncVersion", SyncVersionSchema));
+SyncVersionSchema.plugin(require('mongoose-autopopulate'));
 
 module.exports.getStations = (id) => station.find({ SyncVersion: id }).populate('stations')
 
