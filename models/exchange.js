@@ -12,22 +12,16 @@ const ExchangeSchema = new mongoose.Schema({
   source: {
     type:mongoose.Schema.Types.ObjectId,
     ref:'Source',
-    required:true,
     autopopulate: true
   },
   currency: {
     type:mongoose.Schema.Types.ObjectId,
     ref:'Currency',
-    required:true,
     autopopulate: true
   },
   version:{
     type:mongoose.Schema.Types.ObjectId,
     ref:'SyncVersion',
-    required:true,
-    
-    // The below option tells this plugin to always call `populate()` on
-    // `populatedField`
     autopopulate: true
   },
   isActive: {
@@ -35,6 +29,9 @@ const ExchangeSchema = new mongoose.Schema({
     default: false
   }
 });
+
+
+ExchangeSchema.plugin(require('mongoose-autopopulate'));
 
 var Exchange = (module.exports = mongoose.model("Exchange", ExchangeSchema));
 

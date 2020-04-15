@@ -10,20 +10,31 @@ exports.index = function (req, res, next) {
 
 exports.getOneBy = async function (req, res) {
 
-    var { from, to, amount } = req.query;
     var { source, version } = req.params;
-    var filter = { code: from };
+    var filter = version ? { code: version } : {};
 
 
-    version = await SyncVersion.findOne(version ? { code: version } : {});
-    var exchange=await (await Exchange.find({version:version})).filter(exchange=>exchange.source.code==source)
-    
-    var currency = await Currency.findOne({ code: from })
+    version = await SyncVersion.findOne(filter);
+    var exchanges = await (await Exchange.find({ version: version })).filter(exchange => exchange.source.code == source).map(exchange => {
+        return {
+            date: exchange.date,
+            value: exchange.inValue,
+            code: exchange.currency.code,
+            name: exchange.currency.name,
+            description: exchange.currency.description
+        }
+    })
+
     res.status = 401
     res.json({
         status: 401,
         message: "Unknow user",
-        data: exchange
+        data: {
+            exchanges: exchanges,
+            source: source,
+            date: version.date,
+            version: 'latest'
+        }
     })
 
 };
