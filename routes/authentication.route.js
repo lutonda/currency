@@ -72,6 +72,8 @@ passport.use(new GitHubStrategy({
 // Login Page
 router.get("/", controller.index);
 
+router.get("/gen", controller.generateToken.get);
+
 router.post("/signon", controller.signOn.post);
 
 router.post("/signin", passport.authenticate("local", {successRedirect:'/io', failureRedirect:'/authentication',failureFlash:true}), controller.signIn.post);

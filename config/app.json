@@ -1,0 +1,9 @@
+{
+    "secret": "worldisfullofdevelopers",
+    "verifyOptions": {
+        "expiresIn": "12h",
+        "algorithms": [
+            "RS256"
+        ]
+    }
+}
