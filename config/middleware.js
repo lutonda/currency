@@ -4,6 +4,7 @@ var fs = require('fs')
 const privateKey = fs.readFileSync('./config/private.key');
 
 let checkToken = (req, res, next) => {
+    res.set('Content-Type', 'application/json')
   let token = req.headers['x-access-token'] || req.headers['authorization'] || ''; // Express headers are auto converted to lowercase
   if (token.startsWith('Bearer ')) {
     // Remove Bearer from string
