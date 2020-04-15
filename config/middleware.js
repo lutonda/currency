@@ -1,19 +1,21 @@
 let jwt = require('jsonwebtoken');
 const config = require('./app.json');
+var fs = require('fs')
+const privateKey = fs.readFileSync('./config/private.key');
 
 let checkToken = (req, res, next) => {
-  let token = req.headers['x-access-token'] || req.headers['authorization']; // Express headers are auto converted to lowercase
+  let token = req.headers['x-access-token'] || req.headers['authorization'] || ''; // Express headers are auto converted to lowercase
   if (token.startsWith('Bearer ')) {
     // Remove Bearer from string
     token = token.slice(7, token.length);
   }
-
   if (token) {
-    jwt.verify(token, config.secret, (err, decoded) => {
+    jwt.verify(token, privateKey, config.verifyOptions, (err, decoded) => {
       if (err) {
         return res.json({
           success: false,
-          message: 'Token is not valid'
+          message: 'Token is not valid',
+          data: decoded
         });
       } else {
         req.decoded = decoded;
