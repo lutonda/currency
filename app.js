@@ -13,11 +13,12 @@ var express = require('express'),
     config=require('./config/database')
     mongoose = require('mongoose');
 
-    var express = require('express');
-var jwt = require('jwt-simple');
+
+let middleware = require('./config/middleware');
+
+var express = require('express');
 var app = express();
 
-app.set('jwtTokenSecret', 'YOUR_SECRET_STRING');
 var User = require("./models/user");
 
     mongoose.connect(config.development);
@@ -108,7 +109,7 @@ app.use(function(req,res,next){
 
 app.use('/',homeRoute);
 app.use('/io',userRoute);
-app.use('/api',apiRoute);
+app.use('/api', middleware.checkToken, apiRoute);
 app.use('/authentication',authenticationRoute);
 
 app.get('/authentication/github',
