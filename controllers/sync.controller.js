@@ -15,8 +15,10 @@ exports.international = function (req, res) {
 
 exports.local = function (req, res) {
 
-    ExchangeService.local('test', () => { })
-    res.render('home/about')
+    ExchangeService.local(req,res, data => { 
+        res.json({code:'ok',data:data})
+    })
+    
 }
 
 exports.project = function (req, res) {
