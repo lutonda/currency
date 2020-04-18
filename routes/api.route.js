@@ -9,8 +9,10 @@ router.post('/v2/staion/autehenticate/api', controller.stationAutehenticateByApi
 
 router.get('/v2/sendsms', controller.stationSendsms);
 */
-router.get('/v2/:source/:version', controller.getOneBy);
-router.get('/v2/:source/:version/all', controller.getAllBy);
+//router.get('/v2/rates/:source/:version', controller.getAllBy);
+router.get('/v2/rates/:source/:version', controller.getAllBy);
+router.get('/v2/convert/:source/:version', controller.convert);
+//router.get('/v2/:source/:version/all', controller.getAllBy);
 /*router.get('/v2/sendsms', controller.stationSendsms);
 router.get('/v2/sendsms', controller.stationSendsms);*/
 

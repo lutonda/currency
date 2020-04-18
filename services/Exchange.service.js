@@ -13,7 +13,7 @@ var Client = require('node-rest-client').Client;
 
 var client = new Client();
 
-exports.internacional = async function (data, callback) {
+exports.international = async function (data, callback) {
 
     source = await Source.findOne({ code: 'Fixer' })
 
@@ -22,19 +22,43 @@ exports.internacional = async function (data, callback) {
     client.get(source.url + source.endpoint + '?access_key=' + source.access_key, async function (data, response) {
         // parsed response body as js object
         var version = new SyncVersion();
+        var exchange,log=[];
         version.sourceDate = data.date
         version = await version.save()
         Object.keys(data.rates).map(i => [data.rates[i], i]).forEach(async rate => {
 
-            currency = await Currency.findOne({ code: rate[1] })
-            exchange = new Exchange()
-            exchange.inValue = rate[0];
-            exchange.outValue = rate[0];
-            exchange.source = source;
-            exchange.currency = currency;
-            exchange.version = version;
+            await Currency.findOne({ code: rate[1] },async (err,currency)=>{
+                try {
 
-            exchange = await exchange.save()
+                    if (!currency) {
+                        currency=new Currency()
+                        currency.code=rate[1]
+                        await currency.save()
+                        log.push('rate ' + rate[1] + ' notfound')
+                        console.log('rate ' + rate[1] + ' notfound')
+                    }
+                    if (err) {
+                        log.push('err ' + err.toString())
+                        console.log('err ' + err.toString())
+                    }
+
+                    exchange = new Exchange()
+                    exchange.inValue = rate[0];
+                    exchange.outValue = rate[0];
+                    exchange.source = source;
+                    exchange.currency = currency;
+                    exchange.version = version;
+        
+                    exchange.log=log;
+                    exchange.isActive = log.length==0
+                    exchange = await exchange.save()
+        
+                } catch (e) {
+                    exchange.log.push('err ' + e.toString())
+                    exchange = await exchange.save()
+                }
+            })
+            
         });
     });/**/
     // Generate test SMTP service account from ethereal.email

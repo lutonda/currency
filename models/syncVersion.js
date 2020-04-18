@@ -9,30 +9,12 @@ const SyncVersionSchema = new mongoose.Schema({
     },
     version: {
         type: Number,
-        default:1
-             /*async () => {
-            try{
-                console.log('--------------------------------')
-                var v = await SyncVersion.findOne({},(v)=>{
-                    return v = v ? v.version + 1 : 1
-                });
-                console.log(v)
-                return  v ? v.version + 1 : 1
-                console.log('--------------------------------')
-                
-            }catch(err){
-                v=1
-            }
-            return v
-        }*/
+        default:(new Date()).getHours()
     },
-    exchanges:[{
-      type:mongoose.Schema.Types.ObjectId,
-      ref:"Exchange",
-
-    // The below option tells this plugin to always call `populate()` on
-    // `populatedField`
-      autopopulate: true
+    exchanges: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Exchange",
+        autopopulate: true
     }],
     sourceDate: {
         type: Date
@@ -49,9 +31,9 @@ const SyncVersionSchema = new mongoose.Schema({
         default: Date.now
     }
 });
-
-var SyncVersion = (module.exports = mongoose.model("SyncVersion", SyncVersionSchema));
 SyncVersionSchema.plugin(require('mongoose-autopopulate'));
+var SyncVersion = (module.exports = mongoose.model("SyncVersion", SyncVersionSchema));
+
 
 module.exports.getStations = (id) => station.find({ SyncVersion: id }).populate('stations')
 

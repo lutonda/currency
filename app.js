@@ -29,6 +29,7 @@ var routes = require('./routes/index.route'),
     homeRoute = require('./routes/home.route'),
     userRoute = require('./routes/users.route'),
     apiRoute = require('./routes/api.route'),
+    syncRoute = require('./routes/sync.route'),
     authenticationRoute = require('./routes/authentication.route');
 
 var helpers=require('./helpers/app.helpers');
@@ -40,9 +41,6 @@ app.set('port',(process.env.PORT || 8800));
 server.listen(app.get('port'),function(){
   console.log('Listinig to port '+app.get('port'));
 });
-
-//creating socket server
-var io = require("socket.io")(server);
 
 // View engine
 app.set('views',path.join(__dirname,'views'));
@@ -64,7 +62,7 @@ app.use(express.static(path.join(__dirname,'public')));
 
 // Express session
 app.use(session({
-  secret:'secret',
+  secret:'secret'/* validate possibility of default RSA */,
   saveUninitialized:true,
   resave:true
 }));
@@ -101,7 +99,6 @@ app.use(function(req,res,next){
   res.locals.error_msg = req.flash('error_msg');
   res.locals.error = req.flash('error');
   res.locals.user = req.user || null;
-  res.locals["socketio"] = io;
   res.locals.url=req.url.split('/')[1] || 'home'
   res.locals.hostname=req.hostname
   next();
@@ -109,12 +106,14 @@ app.use(function(req,res,next){
 
 app.use('/',homeRoute);
 app.use('/io',userRoute);
+app.use('/sync',syncRoute);
 app.use('/api', middleware.checkToken, apiRoute);
 app.use('/authentication',authenticationRoute);
 
 app.get('/authentication/github',
-  passport.authenticate('github'));
+passport.authenticate('github'));
 
+/**-- */
 app.get('/authentication/github/callback', 
   passport.authenticate('github', { failureRedirect: '/login' }),
   function(req, res) {
@@ -122,28 +121,4 @@ app.get('/authentication/github/callback',
     res.redirect('/io');
   });
 
-
-io.on('connection',function(socket){
-    
-  console.log('>>>'+ (new Date()).toJSON().slice(0,10).replace(/-/g,'/')+ ': a user connected to: '+ socket.id + ' on ' + socket.request.connection.remoteAddress + ' - ' + socket.request.headers['user-agent']);
-
-  //receber conncção
-  io.emit('message','ola')
-  //receber mensagem
-  socket.on('chat message', function(msg){
-    console.log('>>>message: ' + msg.apikey);
-  });
-  //enviar mensagem
-  io.emit('message','ola')
-  io.emit('refresh-connection',true)
-  socket.on('disconnect', function(){
-    io.emit('refresh-connection',false)
-    console.log(new Date()+ ', disconnected');
-  });
-  
-})
-
-io.on('messageSuccess',function(data){
-  console.log(data +'ola' )
-})
 

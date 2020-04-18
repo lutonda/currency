@@ -14,9 +14,11 @@ const CurrencySchema = new mongoose.Schema({
   description: {
     type: String,
   },
-  source: {
-    type: String,
-  },
+  exchanges: [{    
+    type:mongoose.Schema.Types.ObjectId,
+    ref:'Exchange',
+    autopopulate: true
+  }],
   isActive: {
     type: Boolean,
     default: true
@@ -27,6 +29,7 @@ const CurrencySchema = new mongoose.Schema({
   }
 });
 
+CurrencySchema.plugin(require('mongoose-autopopulate'));
 var Currency = (module.exports = mongoose.model("Currency", CurrencySchema));
 
 module.exports.getStations = (id)=> station.find({Currency:id}).populate('stations')

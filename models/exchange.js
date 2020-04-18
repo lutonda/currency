@@ -4,19 +4,21 @@ const uuidv5 = require("uuid/v5");
 
 const ExchangeSchema = new mongoose.Schema({
   inValue: {
-    type: String
+    type: mongoose.Decimal128
   },
   outValue: {
-    type: String
+    type: mongoose.Decimal128
   },
   source: {
     type:mongoose.Schema.Types.ObjectId,
     ref:'Source',
+    require:true,
     autopopulate: true
   },
   currency: {
     type:mongoose.Schema.Types.ObjectId,
     ref:'Currency',
+    require:true,
     autopopulate: true
   },
   version:{
@@ -24,9 +26,12 @@ const ExchangeSchema = new mongoose.Schema({
     ref:'SyncVersion',
     autopopulate: true
   },
+  log:{
+    type:Array
+  },
   isActive: {
     type: Boolean,
-    default: false
+    default: true
   }
 });
 
@@ -34,6 +39,7 @@ const ExchangeSchema = new mongoose.Schema({
 ExchangeSchema.plugin(require('mongoose-autopopulate'));
 
 var Exchange = (module.exports = mongoose.model("Exchange", ExchangeSchema));
+
 
 module.exports.getStations = (id)=> station.find({Exchange:id}).populate('stations')
 
