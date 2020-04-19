@@ -19,12 +19,18 @@ exports.international = async function (data, callback) {
 
     var exchange = null;
     var currency = null;
+    var filter = {};
     client.get(source.url + source.endpoint + '?access_key=' + source.access_key, async function (data, response) {
         // parsed response body as js object
-        var version = new SyncVersion();
+        filter.date = { $gte: data.date + 'T00:00:00Z', $lte: data.date + 'T23:59:59Z' }
+        var version = await SyncVersion.findOne(filter).sort({ 'date': -1 })
+        if (!version) {
+            version=new SyncVersion();
+            var exchange, log = [];
+            version.sourceDate = data.date
+            version = await version.save()
+        }
         var exchange, log = [];
-        version.sourceDate = data.date
-        version = await version.save()
         Object.keys(data.rates).map(i => [data.rates[i], i]).forEach(async rate => {
 
             await Currency.findOne({ code: rate[1] }, async (err, currency) => {
@@ -69,24 +75,82 @@ exports.local = async function (req, res, callback) {
 
     // Generate test SMTP service account from ethereal.email
     // Only needed if you don't have a real mail account for testing
-    var { source, data } = req.query
+    var { source, data, date } = req.query
+    date=date.split('WAT').join('T')
     data = base64decode(data);
-    return callback(data);
-    var sources = await (await Source.findOne({ 'code': source }))
-    console.log(sources)
+    data = data.split('\n');
+    var rates = [];
+    var i = 0;
+
+    switch (source) {
+        case 'Atlantico':
+            i = -1;
+            while (i < data.length) {
+                rates.push([data[i += 1], data[i += 3], data[i += 2]]);
+            }
+            break;
+        case 'BNI':
+            i = -1;
+            while (i < data.length) {
+                rates.push([data[i++], data[i].split(' ')[1], data[i++].split(' ')[2]]);
+            }
+            break;
+        case 'BCI':
+            i = 0;
+            while (i < data.length) {
+                rates.push([data[i++], data[i++], data[i++]]);
+            }
+            break;
+        default:
+            rates = data.map(d => d.split(' '));
+            break;
+    }
+
+    //return callback(data);
+    var log=[];
+    var source = await (await Source.findOne({ 'code': source }))
+    if(!source) return [];
+    //    { $gte: date + 'T00:00:00Z', $lte: date + 'T23:59:59Z' }
+    var version = await SyncVersion.findOne({ date: date }).sort({ 'date': -1 })
+    if (!version) {
+        version=new SyncVersion();
+        var exchange, log = [];
+        version.sourceDate = date
+        version.date = date
+        version = await version.save()
+    }
     var exchange = null;
-    var currency = null;
-    var $ = null;
-    var jsonTables = null;
-    sources.forEach(source => {
-        client.get(source.url, async function (data, response) {
-            $ = cheerio.load(data.toString());
-            data = $(source.htmlSelector).parent().html()
+    rates.forEach(async rate => {
 
-            jsonTables = HtmlTableToJson.parse(data);
-            console.log('------------------------------')
-            console.log(jsonTables)
+        await Currency.findOne({ code: rate[0] }, async (err, currency) => {
+            log=[];
+            try {
 
+                if (!currency) {
+                    console.log('rate ' + rate[0] + ' notfound')
+                    return;
+                }
+                if (err) {
+                    log.push('err ' + err.toString())
+                    console.log('err ' + err.toString())
+                }
+
+                exchange = new Exchange()
+                exchange.inValue = rate[1].split(',').join('.') * 1;
+                exchange.outValue = rate[2].split(',').join('.') * 1;
+                exchange.source = source;
+                exchange.currency = currency;
+                exchange.version = version;
+
+                exchange.log = log;
+                exchange.isActive = log.length == 0
+                exchange = await exchange.save()
+
+            } catch (e) {
+                exchange.log.push('err ' + e.toString())
+                exchange = await exchange.save()
+            }
         })
-    })
+
+    });
 }

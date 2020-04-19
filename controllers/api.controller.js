@@ -1,5 +1,6 @@
 
 var Currency = require("../models/currency");
+var Source = require("../models/source");
 var SyncVersion = require("../models/syncVersion");
 var Exchange = require("../models/exchange");
 var ExchangeDTO = require("../models/dto/exchange.dto.js");
@@ -17,10 +18,12 @@ exports.getAllBy = async (req, res) => {
     if (date) filter.date = { $gte: date + 'T00:00:00Z', $lte: date + 'T23:59:59Z' }
 
 
+    var sourceObj=await Source.findOne({code:source});
+    
     version = await SyncVersion.findOne(filter).sort({ 'date': -1 }).populate('exchanges');
     var exchanges = []
     var baseExchange;
-    await Exchange.find({ version: version }).exec(async (err, datas) => {
+    await Exchange.find({ version: version, source:sourceObj }).exec(async (err, datas) => {
         if (base) {
             var currency = await Currency.findOne({ code: base })
             baseExchange = await Exchange.findOne({ version: version, currency: currency });
@@ -62,9 +65,9 @@ exports.convert = async (req, res) => {
 
 
     version = await SyncVersion.findOne(filter).sort({ 'date': -1 }).populate('exchanges');
-
+    var sourceObj=await SourceBuffer.findOne({code:source});
     var currencies = await Currency.find({ code: [from, to] })
-    exchanges = await Exchange.find({ version: version, currency: currencies });
+    exchanges = await Exchange.find({ version: version, currency: currencies, source:sourceObj });
     from = exchanges.filter(e=>e.currency.code==from)[0]
     to = exchanges.filter(e=>e.currency.code==to)[0]
 
