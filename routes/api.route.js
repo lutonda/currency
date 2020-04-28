@@ -16,5 +16,8 @@ router.get('/v2/convert/:source/:version', controller.convert);
 /*router.get('/v2/sendsms', controller.stationSendsms);
 router.get('/v2/sendsms', controller.stationSendsms);*/
 
+router.get('/v2/currencies/all', controller.getAllCurrencies);
+router.get('/v2/currencies/:code', controller.getOneCurrency);
+
 // Export API routes
 module.exports = router;

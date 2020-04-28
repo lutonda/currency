@@ -5,6 +5,8 @@ const publicKey = fs.readFileSync('./config/public.key');
 
 let checkToken = (req, res, next) => {
 
+  res.header("Access-Control-Allow-Origin", "*");
+  
   return next();
   res.set('Content-Type', 'application/json')
 

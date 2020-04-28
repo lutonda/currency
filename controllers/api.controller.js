@@ -8,6 +8,25 @@ var ExchangeDTO = require("../models/dto/exchange.dto.js");
 exports.index = function (req, res, next) {
     res.render("api", { title: "Hey", message: "Hello there!" });
 };
+exports.getOneCurrency= async (req,res)=>{
+    var currency=await Currency.find(req.params.code);
+    res.json({
+        status: 200,
+        message: "success",
+        currencies:currency         
+    })  
+}
+exports.getAllCurrencies = async(req, res, next) => {
+    console.log('colled')
+    console.log(new Date())
+    var currencies=await Currency.find();
+    
+    res.json({
+        status: 200,
+        message: "success",
+        currencies:currencies         
+    })
+};
 
 exports.getAllBy = async (req, res) => {
 
@@ -54,6 +73,7 @@ exports.getAllBy = async (req, res) => {
     })
 
 }
+
 exports.convert = async (req, res) => {
 
     var { source, version } = req.params;
@@ -65,7 +85,7 @@ exports.convert = async (req, res) => {
 
 
     version = await SyncVersion.findOne(filter).sort({ 'date': -1 }).populate('exchanges');
-    var sourceObj=await SourceBuffer.findOne({code:source});
+    var sourceObj=await Source.findOne({code:source});
     var currencies = await Currency.find({ code: [from, to] })
     exchanges = await Exchange.find({ version: version, currency: currencies, source:sourceObj });
     from = exchanges.filter(e=>e.currency.code==from)[0]
@@ -87,7 +107,9 @@ exports.convert = async (req, res) => {
             from: from.currency.code,
             to: to.currency.code,
             amount: amount,
-            value: total
+            value: total,
+            version:version,
+            source:sourceObj
         }
     })
 };
