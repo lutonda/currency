@@ -19,5 +19,7 @@ router.get('/v2/sendsms', controller.stationSendsms);*/
 router.get('/v2/currencies/all', controller.getAllCurrencies);
 router.get('/v2/currencies/:code', controller.getOneCurrency);
 
+router.get('/v2/sources', controller.getAllSources);
+
 // Export API routes
 module.exports = router;
