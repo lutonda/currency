@@ -82,6 +82,7 @@ exports.local = async function (req, res, callback) {
     var rates = [];
     var i = 0;
 
+    rates.push(['AOA',1,1]);
     switch (source) {
         case 'Atlantico':
             i = -1;
@@ -119,7 +120,12 @@ exports.local = async function (req, res, callback) {
         version.date = date
         version = await version.save()
     }
+    version.sources.push(source);
+    await version.save();
+    //source.versions.push(version);
+    
     var exchange = null;
+    var baseRate=rates.filter(r=>r[0]=="EUR")[0][1].split(',').join('.') * 1;
     rates.forEach(async rate => {
 
         await Currency.findOne({ code: rate[0] }, async (err, currency) => {
@@ -136,8 +142,8 @@ exports.local = async function (req, res, callback) {
                 }
 
                 exchange = new Exchange()
-                exchange.inValue = rate[1].split(',').join('.') * 1;
-                exchange.outValue = rate[2].split(',').join('.') * 1;
+                exchange.inValue = baseRate/rate[1].split(',').join('.') * 1;
+                exchange.outValue = baseRate/rate[2].split(',').join('.') * 1;
                 exchange.source = source;
                 exchange.currency = currency;
                 exchange.version = version;
