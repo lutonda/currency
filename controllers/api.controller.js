@@ -85,7 +85,8 @@ exports.convert = async (req, res) => {
 
 
     version = await SyncVersion.findOne(filter).sort({ 'date': -1 }).populate('exchanges');
-    var sourceObj=await Source.findOne({code:source});
+
+    var sourceObj=version.sources.filter(s=>s.code==source)[0];
     var currencies = await Currency.find({ code: [from, to] })
     exchanges = await Exchange.find({ version: version, currency: currencies, source:sourceObj });
     from = exchanges.filter(e=>e.currency.code==from)[0]
@@ -114,14 +115,14 @@ exports.convert = async (req, res) => {
     })
 };
 
-exports.getAllByx = async function (req, res) {
+exports.getAllSources = async function (req, res) {
 
-    var currency = await Currency.find()
-    res.status = 401
+    var sources = await Source.find()
+    res.status = 200
     res.json({
-        status: 401,
-        message: "Unknow user",
-        data: currency
+        status: 200,
+        message: "success",
+        sources: sources
     })
 
 };
