@@ -16,6 +16,11 @@ const SyncVersionSchema = new mongoose.Schema({
         ref: "Exchange",
         autopopulate: true
     }],
+    sources: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Source",
+        autopopulate: true
+    }],
     sourceDate: {
         type: Date
     },
