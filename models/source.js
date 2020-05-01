@@ -24,6 +24,11 @@ const SourceSchema = new mongoose.Schema({
   descriptions: {
     type: String
   },
+  versions: [{
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "SyncVersion",
+    autopopulate: true
+}],
   isActive: {
     type: Boolean,
     default: false
